@@ -151,6 +151,34 @@ button:focus-visible {
   transform: translateY(-1px);
 }
 
+/* Filter Tabs */
+.filter-tabs {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.filter-tabs button {
+  background: transparent;
+  border: 1px solid var(--ink);
+  color: var(--ink);
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.8rem;
+  padding: 4px 12px;
+  cursor: pointer;
+  border-radius: 12px;
+  transition: all 0.2s ease;
+}
+
+.filter-tabs button:hover {
+  background: rgba(43, 42, 38, 0.05);
+}
+
+.filter-tabs button.active {
+  background: var(--ink);
+  color: var(--paper);
+}
+
 /* List */
 .todo-list {
   list-style: none;

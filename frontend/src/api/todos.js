@@ -5,7 +5,13 @@ const api = axios.create({
   baseURL: 'http://localhost:3000/api/todos'
 });
 
-export const fetchTodos = () => api.get('/').then(res => res.data);
+export const fetchTodos = (doneFilter) => {
+  const config = {};
+  if (doneFilter !== undefined) {
+    config.params = { done: doneFilter };
+  }
+  return api.get('/', config).then(res => res.data);
+};
 
 export const createTodo = (title) =>
   api.post('/', { title }).then(res => res.data);
